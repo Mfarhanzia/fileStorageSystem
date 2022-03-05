@@ -11,8 +11,9 @@ To get started with the project follow the following steps
 - run migrations `python manage.py migrate`.
 - and start server by using cmd `python manage.py runserver` now goto `http://localhost:8000`
 
-Project Usage:
-1. Add Create Folder.
-2. Add Topics.
-3. Upload document by selecting folder and related topics(you can select multiple topics) and add file(not more than 10MB).
+**Project Usage:**
+Using the front-end UI
+1. First Add folder.
+2. then Add Topics.
+3. Upload document: by selecting folder and related topics(you can select multiple topics) and add file(not more than 10MB).
 4. on the second row user can access the documents of any folder by clicking on the folder name and can also set filter on **Topics** to get the topic specific documents.

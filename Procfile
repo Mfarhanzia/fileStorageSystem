@@ -1,2 +1,2 @@
-web: gunicorn spekit_assignment.wsgi
+web: gunicorn spekit_assignment.wsgi --log-file -
 release: python manage.py migrate --no-input

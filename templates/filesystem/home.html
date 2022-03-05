@@ -52,16 +52,18 @@
                             <div class="modal-body">
                                 <form id="uploadDocument">
                                     {% csrf_token %}
-                                    <div class="form-inline">
-                                        <select id="folderSelect" name="folder" required class="form-control m-2">
+                                    <div class="">
+                                        <h6>Select Folder:</h6>
+                                        <select id="folderSelect" name="folder" required class="form-control w-50">
                                             <option selected disabled>Select Folder</option>
                                         </select>
-                                        <select id="topicSelect" name="topics" required class="form-control m-2" multiple>
+                                        <h6 class="mt-3">Select Topics:</h6>
+                                        <select id="topicSelect" name="topics" required class="form-control w-50" multiple>
                                             <option selected disabled>Select Topic</option>
                                         </select>
                                         <input
                                             name="file"
-                                            class="form-control ml-2"
+                                            class="mt-3"
                                             type="file" required
                                         />
                                     </div>

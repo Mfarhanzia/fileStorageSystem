@@ -1,0 +1,13 @@
+.cursor{
+    cursor: pointer;
+}
+
+.active{
+    font-weight: bold;
+    background-color: lightgray;
+}
+
+.data-list-row{
+    max-height: 60vh;
+    overflow: scroll;
+}

@@ -7,7 +7,7 @@ To get started with the project follow the following steps
 - Open `spekit_assignment/settings.py` and change the DataBase credentials to your Database.
 - Create virtualenv using `virtualenv -p python3 venv`
 - Activate virtualenv using `source venv/bin/activate`(linux/mac os).
-- install the requirements using by staying in the project base directory using cmd `pip install -r requirements.tx`
+- install the requirements by staying in the project base directory using cmd `pip install -r requirements.tx`
 - run migrations `python manage.py migrate`.
 - and start server by using cmd `python manage.py runserver` now goto `http://localhost:8000`
 

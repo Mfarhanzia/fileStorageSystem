@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row mt-5">
+            <div class="col-md-4">
+                <form id="addFolderForm" name="addFolderForm" method="post">
+                    {% csrf_token %}
+                    <input
+                        placeholder="Enter Folder name"
+                        class="form-control"
+                        name="title"
+                        required
+                    />
+                    <button class="mt-2 btn btn-group-sm">Add Folder</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <form id="addTopicForm" method="post">
+                    {% csrf_token %}
+                    <input
+                        placeholder="Enter Topic name"
+                        class="form-control"
+                        name="title"
+                        required
+                    />
+                    <button class="mt-2 btn btn-group-sm">Add Topic</button>
+                </form>
+            </div>
+            <div class="col-md-4">
+                <button
+                    type="button"
+                    class="btn btn-group-sm"
+                    data-toggle="modal"
+                    data-target=".bd-example-modal-lg"
+                >
+                    Upload Document
+                </button>
+                <div
+                    class="modal fade bd-example-modal-lg"
+                    tabindex="-1"
+                    role="dialog"
+                    aria-labelledby="myLargeModalLabel"
+                    aria-hidden="true"
+                    id="UploadDocumentModal"
+                >
+                    <div class="modal-dialog modal-lg">
+                        <div class="modal-content p-4">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Upload Document</h5>
+                            </div>
+                            <div class="modal-body">
+                                <form id="uploadDocument">
+                                    {% csrf_token %}
+                                    <div class="form-inline">
+                                        <select id="folderSelect" name="folder" required class="form-control m-2">
+                                            <option selected disabled>Select Folder</option>
+                                        </select>
+                                        <select id="topicSelect" name="topics" required class="form-control m-2" multiple>
+                                            <option selected disabled>Select Topic</option>
+                                        </select>
+                                        <input
+                                            name="file"
+                                            class="form-control ml-2"
+                                            type="file" required
+                                        />
+                                    </div>
+                                    <div class="col-md-12 text-center">
+                                        <button class="btn mt-2 text-center">Upload</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row mt-5 data-list-row">
+            <div class="col-md-2">
+                <p>Filter by Topics:</p>
+                <select id="topicFilterSelect" name="topic" required class="form-control m-2" multiple>
+                    <option selected disabled>Filter by Topics:</option>
+                </select>
+            </div>
+            <div class="col-md-3">
+                <table class="table">
+                    <thead>
+                        <th>
+                            Folder names
+                        </th>
+                    </thead>
+                    <tbody id="folders">
+                    </tbody>
+                </table>
+            </div>
+             <div class="col-md-4">
+                <table class="table">
+                    <thead>
+                        <th>Documents</th>
+                    </thead>
+                    <tbody id="documents">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,7 +1,9 @@
 from django.urls import path
-from django.urls.conf import include
-from .views import *
+from .views import ListCreateFolders, ListCreateTopics, ListCreateDocument
 
 
 urlpatterns = [
+    path("folders", ListCreateFolders.as_view()),
+    path("topics", ListCreateTopics.as_view()),
+    path("documents", ListCreateDocument.as_view()),
 ]
